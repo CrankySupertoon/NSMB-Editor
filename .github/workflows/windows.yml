@@ -28,7 +28,7 @@ jobs:
         vs-version: '16.6.2'
     # Run MSBuild
     - name: Build Solution
-      run: msbuild "D:\a\NSMB-Editor\NSMB-Editor\NSMBe5.sln.sln" /verbosity:minimal /property:Configuration=Release
+      run: msbuild "D:\a\NSMB-Editor\NSMB-Editor\NSMBe5.sln" /verbosity:minimal /property:Configuration=Release
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
