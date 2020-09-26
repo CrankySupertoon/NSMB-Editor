@@ -13,7 +13,6 @@
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>nsmbe.ico</ApplicationIcon>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <DelaySign>false</DelaySign>
     <StartupObject>NSMBe5.Program</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -48,6 +47,13 @@
     <Optimize>false</Optimize>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -59,6 +65,14 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>nuget install $(ProjectDir)packages.config -o $(SolutionDir)Packages</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
